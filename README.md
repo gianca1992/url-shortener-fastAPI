@@ -8,12 +8,12 @@ I have written a Dockerfile and made it available in this repo along with the py
 
 When the main.tf file is invoked, some AWS infrastructure is automatically deployed and then the pull-run-shortener.sh is triggered to install docker, pull the image from the docker registry and instanciate a container where the url shortener app is running on an EC2 instance.  
 
-In order for Terraform to interact with AWS, you need and AWS free tier account, an AWS programmatic access key and a key pair to interact with the EC2 instance. 
-
+As prerequisites, you will need to install Docker and Terraform in your local machine, you need to create an AWS free tier account, a docker hub account, an AWS programmatic access key and a key pair for Terraform to be able to interact with the EC2 instance. 
+ 
 
 
 ###  A 
-Install docker locally, clone the repo, cd to the root dir where Dockerfile dir resides, edit the Dockerfile as needed and when you are ready
+Clone the repo, cd to the root dir where Dockerfile resides, edit the Dockerfile if needed and when you are ready
 
 ### B 
 Build the image locally:
@@ -23,28 +23,29 @@ docker build -t url-shortener-giancarlo .
 
 ```
 
-Run a container from it to test locally: 
+Run a container from it to test it: 
 
 ```
 docker run -p 8000:8000 url-shortener-giancarlo
 ```
 
-You should see something like:
+You should see something similar to:
 
 ```
 INFO:     Started server process [1]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
 ```
-run ```curl localhost:8000``` to see a test message, 
+run ```curl localhost:8000``` to see a test hello message, 
 
 ```
 "Hello from the URL shortener FastAPI python app"
 ```
 
 ### C 
-Create an account in dockerhub, create a repository, name it for example "repo-for-shortener"
+Create a repository from your dockerhub account, name it for example "repo-for-shortener"
 
 Tag the image and then push it to your dockerhub repository:
 
