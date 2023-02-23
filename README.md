@@ -58,7 +58,7 @@ docker push your-dockerhub-username/repo-for-shortener
 ### D 
 Set up a CLI programmatic access key from AWS, create a key pair from AWS, name it key_pair.pem. This will be used by terraform to deploy the app on an EC2 instance by leveraging the shell script
 
-### F 
+### E
 Launch the terrafrom commands locally by replacing your programmatic access credentials: 
 
 ```
@@ -67,7 +67,7 @@ terraform plan -var 'aws_access_key=XXXXXX' -var 'aws_secret_key=XXXXXXX'
 terraform apply -var 'aws_access_key=XXXXXX' -var 'aws_secret_key=XXXXXXX' 
 ```
 
-### G
+### F
 You can ssh into the ec2 instance to test the application: 
 
 ```
@@ -88,20 +88,20 @@ curl localhost:8000
 ```
 
 
-### H  
+### G  
 Send a POST request via CURL populating the target_url with the url you want to shorten, for example let's use https://www.youtube.com/watch?v=0yWAtQ6wYNM  
 ```
 [ec2-user@ip-172-31-27-242 ~]$ curl -X 'POST'   'http://0.0.0.0:8000/url'   -H 'accept: application/json'   -H 'Content-Type: application/json'   -d '{
   "target_url": "https://www.youtube.com/watch?v=0yWAtQ6wYNM"}'
  ```
  
- You will get in response the shortened link http://localhost:8000/DI9LL
+ You will get in response the shortened link, for example in my case http://localhost:8000/DI9LL
 
 ```
  {"target_url":"https://www.youtube.com/watch?v=0yWAtQ6wYNM","is_active":true,"clicks":0,"url":"http://localhost:8000/DI9LL","admin_url":"http://localhost:8000/admin/DI9LL_B01AFMEA"}
  
  ```
 
-### I 
+### H 
 You can test them with "curl -L http://localhost:8000/DI9LL" and " curl https://www.youtube.com/watch?v=0yWAtQ6wYNM" 
 
