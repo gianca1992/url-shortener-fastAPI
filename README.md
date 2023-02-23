@@ -4,9 +4,10 @@ This pyhon app uses FastAPI, Uvicorn as web Server and SQL Alchemy as DB to impl
 
 The python code was grabbed from https://github.com/realpython/materials/tree/master/fastapi-url-shortener/source_code_final/shortener_app
 
-I have written a Dockerfile and made it available in this repo along with the python code and I will show a step-by step guide to dockerise the app and to deploy it on AWS using Terraform. 
+I have written a Dockerfile and made it available in this repo along with the python code, with a .tf file and with a .sh file. 
+I will show a step-by step guide to dockerise the app and to deploy it on AWS using Terraform. 
 
-When the main.tf file is invoked, some AWS infrastructure is automatically deployed and then the pull-run-shortener.sh is triggered to install docker, pull the image from the docker registry and instanciate a container where the url shortener app is running on an EC2 instance.  
+When the main.tf file is invoked, some AWS infrastructure is automatically deployed and then the pull-run-shortener.sh is triggered to install docker, pull the image from the docker registry and instantiate a container where the url shortener app is running on an EC2 instance.  
 
 As prerequisites, you will need to install Docker and Terraform in your local machine, you need to create an AWS free tier account, a docker hub account, an AWS programmatic access key and a key pair for Terraform to be able to interact with the EC2 instance. 
  
