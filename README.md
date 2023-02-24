@@ -15,7 +15,7 @@ As prerequisites, you will need to [install Docker](https://docs.docker.com/engi
 
 
 ###  A 
-Clone the repo, cd to the root dir where Dockerfile resides, edit the Dockerfile if needed and when you are ready
+Clone the repo, cd to the root dir where Dockerfile resides, edit the Dockerfile and the pull-run-shortener.sh and when you are ready
 
 ### B 
 Build the image locally:
@@ -99,11 +99,10 @@ Send a POST request via CURL populating the target_url with the url you want to 
 
 ```
  {"target_url":"https://www.youtube.com/watch?v=0yWAtQ6wYNM","is_active":true,"clicks":0,"url":"http://localhost:8000/DI9LL","admin_url":"http://localhost:8000/admin/DI9LL_B01AFMEA"}
- 
  ```
 
 ### H 
-You can test them with "curl -L http://localhost:8000/DI9LL" and " curl https://www.youtube.com/watch?v=0yWAtQ6wYNM" 
+You can test them with ```curl -L http://localhost:8000/DI9LL``` and ```curl https://www.youtube.com/watch?v=0yWAtQ6wYNM```
 
 
 
