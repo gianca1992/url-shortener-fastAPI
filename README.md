@@ -42,7 +42,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 run ```curl localhost:8000``` to see a test hello message, 
 
 ```
-"Hello from the URL shortener FastAPI python app"
+"Hello from Giancarlo, this the URL shortener API""
 ```
 
 ### C 
