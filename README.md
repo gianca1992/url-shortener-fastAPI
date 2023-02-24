@@ -2,7 +2,8 @@
 
 This pyhon app uses FastAPI, Uvicorn as web Server and SQL Alchemy as DB to implement a local url shortener. 
 
-The python code was grabbed from [here](https://github.com/realpython/materials/tree/master/fastapi-url-shortener/source_code_final/shortener_app)
+The python code was grabbed from [here](https://github.com/realpython/materials/tree/master/fastapi-url-shortener/source_code_final/shortener_app).
+You will find a detailed description of the code and API [here](https://realpython.com/build-a-python-url-shortener-with-fastapi/).  
 
 I have written a Dockerfile and made it available in this repo along with the python code, with a main.tf file and with a pull-run-shortener.sh script. 
 I will show a step-by step guide to dockerise the app and to deploy it on AWS using Terraform. 
@@ -21,7 +22,6 @@ Build the image locally:
 
 ```
 docker build -t url-shortener-giancarlo . 
-
 ```
 
 Run a container from it to test it: 
@@ -37,8 +37,8 @@ INFO:     Started server process [1]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-
 ```
+
 run ```curl localhost:8000``` to see a test hello message, 
 
 ```
@@ -54,7 +54,6 @@ Tag the image and then push it to your dockerhub repository:
 docker tag url-shortener-giancarlo:latest your-dockerhub-username/repo-for-shortener
 
 docker push your-dockerhub-username/repo-for-shortener
-
 ```
 
 ### D 
@@ -86,7 +85,6 @@ XXXXXXX   your-dockerhub-username/repo-for-shortener:latest   "/bin/sh -c 'pytho
 
 curl localhost:8000
 "Hello from the URL shortener FastAPI python app"
-
 ```
 
 
@@ -106,4 +104,6 @@ Send a POST request via CURL populating the target_url with the url you want to 
 
 ### H 
 You can test them with "curl -L http://localhost:8000/DI9LL" and " curl https://www.youtube.com/watch?v=0yWAtQ6wYNM" 
+
+
 
