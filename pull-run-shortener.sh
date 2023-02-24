@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # install and configure docker on the ec2 instance
