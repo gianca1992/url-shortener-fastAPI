@@ -2,14 +2,14 @@
 
 This pyhon app uses FastAPI, Uvicorn as web Server and SQL Alchemy as DB to implement a local url shortener. 
 
-The python code was grabbed from https://github.com/realpython/materials/tree/master/fastapi-url-shortener/source_code_final/shortener_app
+The python code was grabbed from [here](https://github.com/realpython/materials/tree/master/fastapi-url-shortener/source_code_final/shortener_app)
 
-I have written a Dockerfile and made it available in this repo along with the python code, with a .tf file and with a .sh file. 
+I have written a Dockerfile and made it available in this repo along with the python code, with a main.tf file and with a pull-run-shortener.sh script. 
 I will show a step-by step guide to dockerise the app and to deploy it on AWS using Terraform. 
 
-When the main.tf file is invoked, some AWS infrastructure is automatically deployed and then the pull-run-shortener.sh is triggered to install docker, pull the image from the docker registry and instantiate a container where the url shortener app is running on an EC2 instance.  
+When the main.tf file is invoked, some AWS infrastructure is automatically deployed, the pull-run-shortener.sh run to install docker, to pull the image from the docker registry and to create a container where the url shortener app will be running on the provisioned EC2 instance.  
 
-As prerequisites, you will need to install Docker and Terraform in your local machine, you need to create an AWS free tier account, a docker hub account, an AWS programmatic access key and a key pair for Terraform to be able to interact with the EC2 instance. 
+As prerequisites, you will need to [install Docker](https://docs.docker.com/engine/install/) and [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) in your local machine, you need to create an [AWS free tier account](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all), a [docker hub account](https://hub.docker.com/), an [AWS programmatic access key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) and a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html) for Terraform to be able to interact with the EC2 instance. 
  
 
 
